@@ -179,6 +179,10 @@ export default function App() {
             <h1>El sabor que<br /><em>enciende</em> el antojo.</h1>
             <p>Pollo jugoso, piel crocante y el aroma inconfundible de nuestras brasas.</p>
             <button className="hero-cta" onClick={() => selectCategory('pollos-a-la-brasa')}>Ver nuestra carta <ChevronRight size={18} /></button>
+            <div className="hero-social-links" aria-label="Redes sociales de Leonardo's">
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"><img src="/facebook-logo.webp" alt="" />Facebook</a>
+              <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer"><img src="/tiktok-logo.webp" alt="" />TikTok</a>
+            </div>
           </div>
           <div className="hero-stamp"><span>HECHO</span><strong>AL FUEGO</strong><span>CON SABOR</span></div>
         </section>
@@ -193,7 +197,9 @@ export default function App() {
               <div className="dish-grid">
                 {category.items.map((dish) => (
                   <motion.article key={`${category.id}-${dish.nombre}-${dish.precio}`} whileHover={{ y: -4 }} transition={{ duration: 0.18 }} className="dish-card">
-                    <div className="dish-photo-placeholder" aria-label="Imagen del plato pendiente"><ImageOff size={21} /><span>IMAGEN<br />DEL PLATO</span></div>
+                    {dish.imagen
+                      ? <img className="dish-photo" src={dish.imagen} alt={dish.nombre} />
+                      : <div className="dish-photo-placeholder" aria-label="Imagen del plato pendiente"><ImageOff size={21} /><span>IMAGEN<br />DEL PLATO</span></div>}
                     <div className="dish-copy"><h3>{dish.nombre}</h3>{dish.descripcion && <p>{dish.descripcion}</p>}<div className="dish-bottom"><strong>{dish.precio}</strong><button onClick={() => openCustomization(dish, category.id)} aria-label={`Personalizar ${dish.nombre}`}><Plus size={18} strokeWidth={3} /></button></div></div>
                   </motion.article>
                 ))}
