@@ -198,7 +198,9 @@ export default function App() {
                 {category.items.map((dish) => (
                   <motion.article key={`${category.id}-${dish.nombre}-${dish.precio}`} whileHover={{ y: -4 }} transition={{ duration: 0.18 }} className="dish-card">
                     {dish.imagen
-                      ? <img className="dish-photo" src={dish.imagen} alt={dish.nombre} />
+                      ? dish.cuadrante
+                        ? <div className={`dish-photo dish-photo-grid crop-${dish.cuadrante}`} role="img" aria-label={dish.nombre} style={{ backgroundImage: `url(${dish.imagen})` }} />
+                        : <img className="dish-photo" src={dish.imagen} alt={dish.nombre} />
                       : <div className="dish-photo-placeholder" aria-label="Imagen del plato pendiente"><ImageOff size={21} /><span>IMAGEN<br />DEL PLATO</span></div>}
                     <div className="dish-copy"><h3>{dish.nombre}</h3>{dish.descripcion && <p>{dish.descripcion}</p>}<div className="dish-bottom"><strong>{dish.precio}</strong><button onClick={() => openCustomization(dish, category.id)} aria-label={`Personalizar ${dish.nombre}`}><Plus size={18} strokeWidth={3} /></button></div></div>
                   </motion.article>

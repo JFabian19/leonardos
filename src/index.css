@@ -112,8 +112,13 @@ button { font: inherit; cursor: pointer; }
 .heading-flame { color: var(--orange); display: grid; place-items: center; }
 .dish-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
 .dish-card { display: flex; flex-direction: column; overflow: hidden; min-height: 259px; background: white; border: 1px solid #ebdcc6; border-radius: 7px; box-shadow: 0 6px 16px rgba(76,42,21,.09); }
-.dish-photo { width: 100%; height: 122px; display: block; object-fit: cover; object-position: center; border-bottom: 1px solid #e3cba8; background: #f8ead2; }
-.dish-photo-placeholder { height: 122px; color: #b37649; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border-bottom: 1px dashed #d6aa78; background: repeating-linear-gradient(45deg, #f8ead2 0, #f8ead2 7px, #fff5e4 7px, #fff5e4 14px); font: 800 10px/1.05 'Barlow Condensed', sans-serif; letter-spacing: .12em; text-align: center; }
+.dish-photo { width: 100%; aspect-ratio: 1 / 1; height: auto; display: block; object-fit: cover; object-position: center; border-bottom: 1px solid #e3cba8; background: #f8ead2; }
+.dish-photo-grid { background-repeat: no-repeat; background-size: 200% 200%; }
+.dish-photo-grid.crop-tl { background-position: top left; }
+.dish-photo-grid.crop-tr { background-position: top right; }
+.dish-photo-grid.crop-bl { background-position: bottom left; }
+.dish-photo-grid.crop-br { background-position: bottom right; }
+.dish-photo-placeholder { aspect-ratio: 1 / 1; height: auto; color: #b37649; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border-bottom: 1px dashed #d6aa78; background: repeating-linear-gradient(45deg, #f8ead2 0, #f8ead2 7px, #fff5e4 7px, #fff5e4 14px); font: 800 10px/1.05 'Barlow Condensed', sans-serif; letter-spacing: .12em; text-align: center; }
 .dish-copy { display: flex; min-height: 136px; flex: 1; flex-direction: column; padding: 12px; }
 .dish-copy h3 { margin: 0; color: var(--ink); font: 800 17px/1 'Barlow Condensed', sans-serif; text-transform: uppercase; }
 .dish-copy p { margin: 6px 0 0; color: #705c50; font-size: 10px; line-height: 1.28; }
@@ -227,7 +232,7 @@ button { font: inherit; cursor: pointer; }
   .category-heading h2 { font-size: 26px; }
   .dish-grid { gap: 8px; }
   .dish-card { min-height: 248px; }
-  .dish-photo, .dish-photo-placeholder { height: 112px; }
+  .dish-photo, .dish-photo-placeholder { height: auto; }
   .dish-copy { min-height: 134px; padding: 10px; }
   .dish-copy h3 { font-size: 16px; }
 }
