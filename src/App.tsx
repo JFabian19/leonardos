@@ -1,10 +1,11 @@
-import { type FormEvent, useMemo, useState } from 'react';
+import { type FormEvent, useEffect, useMemo, useState } from 'react';
 import {
   ChevronRight, Facebook, Flame, ImageOff, Menu, MessageCircle, Minus,
   Music2, Plus, ShoppingBag, Trash2, X,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import { DEFAULT_MENU_DATA, type Dish } from './data/menuData';
+import { DEFAULT_MENU_DATA, type Category, type Dish } from './data/menuData';
+import { fetchMenuFromSheet } from './services/googleSheets';
 
 const WHATSAPP_NUMBER = '51931224363';
 const WHATSAPP_DISPLAY = '931 224 363';
@@ -45,6 +46,7 @@ const isFoodCategory = (categoryId: string) => !['bebidas', 'frappes'].includes(
 
 export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [menuData, setMenuData] = useState<Category[]>(DEFAULT_MENU_DATA);
   const [activeCategory, setActiveCategory] = useState(DEFAULT_MENU_DATA[0].id);
   const [showCart, setShowCart] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
@@ -58,6 +60,16 @@ export default function App() {
   const [pickupDetails, setPickupDetails] = useState<PickupDetails>({ nombre: '', telefono: '' });
   const [locationLink, setLocationLink] = useState<string | null>(null);
   const [locationStatus, setLocationStatus] = useState<'idle' | 'requesting' | 'shared' | 'error'>('idle');
+
+  useEffect(() => {
+    let mounted = true;
+    void fetchMenuFromSheet().then((sheetMenu) => {
+      if (!mounted || !sheetMenu?.length) return;
+      setMenuData(sheetMenu);
+      setActiveCategory((current) => sheetMenu.some((category) => category.id === current) ? current : sheetMenu[0].id);
+    });
+    return () => { mounted = false; };
+  }, []);
 
   const cartCount = useMemo(() => cart.reduce((total, dish) => total + dish.cantidad, 0), [cart]);
   const subtotal = useMemo(
@@ -187,11 +199,11 @@ export default function App() {
           <div className="hero-stamp"><span>HECHO</span><strong>AL FUEGO</strong><span>CON SABOR</span></div>
         </section>
 
-        <nav className={`category-nav ${showMenu ? 'is-open' : ''}`} aria-label="Categorías de la carta"><div className="category-nav-inner">{DEFAULT_MENU_DATA.map((category) => <button key={category.id} onClick={() => selectCategory(category.id)} className={activeCategory === category.id ? 'active' : ''}>{category.nombre}</button>)}</div></nav>
+        <nav className={`category-nav ${showMenu ? 'is-open' : ''}`} aria-label="Categorías de la carta"><div className="category-nav-inner">{menuData.map((category) => <button key={category.id} onClick={() => selectCategory(category.id)} className={activeCategory === category.id ? 'active' : ''}>{category.nombre}</button>)}</div></nav>
 
         <main className="menu-content">
           <div className="intro-line"><span>LA CARTA</span><i /><span>LEONARDO'S</span></div>
-          {DEFAULT_MENU_DATA.map((category, categoryIndex) => (
+          {menuData.map((category, categoryIndex) => (
             <section id={`category-${category.id}`} key={category.id} className="category-section">
               <div className="category-heading"><div className="heading-number">{String(categoryIndex + 1).padStart(2, '0')}</div><div><p>ESPECIALIDADES</p><h2>{category.nombre}</h2></div><div className="heading-flame"><Flame size={30} fill="currentColor" /></div></div>
               <div className="dish-grid">

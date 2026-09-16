@@ -1,67 +1,133 @@
 import Papa from 'papaparse';
+import type { Category, Dish } from '../data/menuData';
 
-// Coloca aquí tu ID de Google Sheets (lo encuentras en la URL de tu hoja de cálculo)
-export const SHEET_ID = '';
+// La hoja debe permitir lectura pública o estar publicada en la web.
+export const SHEET_ID = '1e_nU52REiZWGdaSOw9e5cqpjsW_QL8FAy68jzTzR2uM';
+export const SHEET_TABS = {
+  categories: 'Categorías',
+  dishes: 'Platos',
+} as const;
 
-export interface SheetDish {
-  categoría: string;
-  'nombre del plato': string;
-  descripción: string;
-  precio: string;
-  'URL de imagen': string;
-}
+type SheetRow = Record<string, string | undefined>;
 
-export interface SheetCategory {
-  nombre: string;
-}
+export type SheetCategory = SheetRow & {
+  nombre?: string;
+  orden?: string;
+  visible?: string;
+};
 
-export const fetchSheetData = async <T>(sheetName: string): Promise<T[]> => {
+export type SheetDish = SheetRow & {
+  categoria?: string;
+  nombre?: string;
+  descripcion?: string;
+  precio?: string;
+  url_imagen?: string;
+  cuadrante?: string;
+  orden?: string;
+  visible?: string;
+};
+
+const value = (row: SheetRow, ...columns: string[]) => {
+  for (const column of columns) {
+    const cell = row[column];
+    if (cell?.trim()) return cell.trim();
+  }
+  return '';
+};
+
+const sortOrder = (row: SheetRow, index: number) => {
+  const parsed = Number.parseFloat(value(row, 'orden', 'Orden'));
+  return Number.isFinite(parsed) ? parsed : index;
+};
+
+const isVisible = (row: SheetRow) => !['0', 'false', 'no', 'oculto'].includes(value(row, 'visible', 'Visible').toLowerCase());
+
+const price = (rawPrice: string) => {
+  const parsed = Number.parseFloat(rawPrice.replace(/[^\d,.-]/g, '').replace(',', '.'));
+  return Number.isFinite(parsed) ? `S/ ${parsed.toFixed(2)}` : rawPrice;
+};
+
+const validQuadrant = (rawQuadrant: string): Dish['cuadrante'] => (
+  ['tl', 'tr', 'bl', 'br'].includes(rawQuadrant) ? rawQuadrant as Dish['cuadrante'] : undefined
+);
+
+const categoryKey = (name: string) => name
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase()
+  .trim()
+  .replace(/\s+/g, ' ');
+
+const categoryId = (name: string, index: number) => `categoria-${index + 1}-${categoryKey(name).replace(/[^a-z0-9]+/g, '-')}`;
+
+export const fetchSheetData = async <T extends SheetRow>(sheetName: string): Promise<T[]> => {
   const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
-  
+
   try {
     const response = await fetch(url);
+    if (!response.ok) throw new Error(`La hoja devolvió ${response.status}`);
+
     const csvText = await response.text();
-    
     return new Promise((resolve, reject) => {
-      Papa.parse(csvText, {
+      Papa.parse<T>(csvText, {
         header: true,
         skipEmptyLines: true,
-        complete: (results) => resolve(results.data as T[]),
-        error: (error: any) => reject(error),
+        complete: (results) => resolve(results.data),
+        error: reject,
       });
     });
   } catch (error) {
-    console.error(`Error fetching sheet ${sheetName}:`, error);
+    console.warn(`No se pudo leer la pestaña ${sheetName}:`, error);
     return [];
   }
 };
 
-// Configura aquí la URL de tu Google Apps Script Web App para poder enviar datos
-// Instrucciones: Crea un Apps Script, pega el código que te di, impleméntalo como Aplicación Web y pega la URL de ejecución aquí.
-export const WEB_APP_URL = '';
+/**
+ * Forma la carta a partir de dos pestañas de Google Sheets.
+ *
+ * Categorías: nombre, orden, visible
+ * Platos: categoria, nombre, descripcion, precio, url_imagen, cuadrante, orden, visible
+ */
+export const fetchMenuFromSheet = async (): Promise<Category[] | null> => {
+  const [categoryRows, dishRows] = await Promise.all([
+    fetchSheetData<SheetCategory>(SHEET_TABS.categories),
+    fetchSheetData<SheetDish>(SHEET_TABS.dishes),
+  ]);
 
-export const submitSheetData = async (sheetName: string, data: any): Promise<boolean> => {
-  if (!WEB_APP_URL) {
-    console.warn('Falta configurar WEB_APP_URL. Simulando envío a:', sheetName, data);
-    return new Promise(resolve => setTimeout(() => resolve(true), 1000));
-  }
+  const categories = categoryRows
+    .map((row, index) => ({
+      nombre: value(row, 'nombre', 'Nombre'),
+      orden: sortOrder(row, index),
+      visible: isVisible(row),
+      index,
+    }))
+    .filter((category) => category.nombre && category.visible)
+    .sort((first, second) => first.orden - second.orden)
+    .map(({ nombre, index }) => ({ id: categoryId(nombre, index), nombre, items: [] as Dish[] }));
 
-  try {
-    const response = await fetch(WEB_APP_URL, {
-      method: 'POST',
-      mode: 'no-cors', // Importante para evitar problemas de CORS con Apps Script
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        sheetName,
-        data,
-      }),
+  if (!categories.length) return null;
+
+  const categoriesByName = new Map(categories.map((category) => [categoryKey(category.nombre), category]));
+  dishRows
+    .map((row, index) => ({ row, orden: sortOrder(row, index) }))
+    .filter(({ row }) => isVisible(row))
+    .sort((first, second) => first.orden - second.orden)
+    .forEach(({ row }) => {
+      const category = categoriesByName.get(categoryKey(value(row, 'categoria', 'Categoría')));
+      const nombre = value(row, 'nombre', 'Nombre', 'nombre del plato');
+      const rawPrice = value(row, 'precio', 'Precio');
+      if (!category || !nombre || !rawPrice) return;
+
+      const descripcion = value(row, 'descripcion', 'descripción', 'Descripción');
+      const imagen = value(row, 'url_imagen', 'URL de imagen', 'imagen');
+      category.items.push({
+        nombre,
+        precio: price(rawPrice),
+        descripcion: descripcion || undefined,
+        imagen: imagen || undefined,
+        cuadrante: validQuadrant(value(row, 'cuadrante', 'Cuadrante')),
+      });
     });
-    
-    return true;
-  } catch (error) {
-    console.error(`Error submitting to sheet ${sheetName}:`, error);
-    return false;
-  }
+
+  return categories;
 };
