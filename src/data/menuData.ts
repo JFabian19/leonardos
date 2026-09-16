@@ -13,13 +13,13 @@ export interface Category {
 
 const item = (nombre: string, precio: string, descripcion?: string): Dish => ({ nombre, precio, descripcion });
 
-// Carta transcrita de las piezas gráficas proporcionadas por Leonardo's.
+// Carta actualizada de las piezas gráficas compartidas por Leonardo's.
 export const DEFAULT_MENU_DATA: Category[] = [
   {
     id: 'pollos-a-la-brasa', nombre: 'Pollos a la brasa',
     items: [
       item('1 pollo entero', 'S/ 55.00', 'Papas fritas + ensalada'),
-      item('1/2 pollo', 'S/ 29.00', 'Papas fritas + ensalada'),
+      item('1/2 pollo', 'S/ 30.00', 'Papas fritas + ensalada'),
       item('1/4 pollo', 'S/ 15.00', 'Papas fritas + ensalada'),
       item('Mostro 1/4 de pollo', 'S/ 18.00', 'Chaufa + papas fritas + ensalada'),
       item('Mostrito 1/8 de pollo', 'S/ 13.00', 'Chaufa + papas fritas + ensalada'),
@@ -35,7 +35,7 @@ export const DEFAULT_MENU_DATA: Category[] = [
       item('Mostro Pepsi', 'S/ 19.00', 'Chaufa + papas fritas + ensalada + Pepsi 450 ml'),
       item('Promo familiar', 'S/ 71.00', '1 pollo + papas fritas + ensalada + Pepsi 1.5 L + 1/4 pollo solo o chaufa'),
       item('Promo especial 1/2', 'S/ 75.00', '1 pollo entero + 1/2 pollo solo + papas fritas + ensalada'),
-      item('Promo especial 1/4', 'S/ 66.00', '1 pollo entero + 1/4 pollo solo + papas fritas + ensalada'),
+      item('Promo especial 1/2', 'S/ 66.00', '1 pollo entero + 1/2 pollo solo + papas fritas + ensalada'),
       item('Promo especial con chaufa', 'S/ 73.00', '1 pollo entero + 1/4 pollo solo + chaufa + papas fritas + ensalada'),
     ],
   },
@@ -61,19 +61,17 @@ export const DEFAULT_MENU_DATA: Category[] = [
   {
     id: 'chifa', nombre: 'Chifa',
     items: [
-      item('Chaufa con pollo', 'S/ 11.00'), item('Chaufa con chancho', 'S/ 14.00'), item('Chaufa con carne', 'S/ 15.00'), item('Chaufa con langostino', 'S/ 17.00'), item('Chaufa especial', 'S/ 18.00'), item('Chaufa a lo pobre', 'S/ 15.00'),
-      item('Aeropuerto con pollo', 'S/ 13.00'), item('Aeropuerto con chancho', 'S/ 15.00'), item('Aeropuerto con carne', 'S/ 16.00'), item('Aeropuerto con langostino', 'S/ 18.00'), item('Aeropuerto especial', 'S/ 19.00'), item('Aeropuerto a lo pobre', 'S/ 18.00'),
-      item('Tallarín con pollo', 'S/ 12.00'), item('Tallarín con chancho', 'S/ 14.00'), item('Tallarín con carne', 'S/ 15.00'), item('Tallarín con langostino', 'S/ 18.00'), item('Tallarín especial', 'S/ 19.00'),
-      item('Salvaje con pollo', 'S/ 15.00'), item('Salvaje con chancho', 'S/ 16.00'), item('Salvaje con carne', 'S/ 17.00'), item('Salvaje con langostino', 'S/ 17.00'), item('Salvaje especial', 'S/ 18.00'),
-      item('Combinado con pollo', 'S/ 14.00'), item('Combinado con chancho', 'S/ 15.00'), item('Combinado con carne', 'S/ 16.00'), item('Combinado con langostino', 'S/ 17.00'), item('Combinado especial', 'S/ 18.00'),
+      item('Chaufa con pollo', 'S/ 12.00'), item('Chaufa con chancho', 'S/ 15.00'), item('Chaufa con carne', 'S/ 16.00'), item('Chaufa con langostino', 'S/ 19.00'), item('Chaufa especial', 'S/ 20.00'), item('Chaufa a lo pobre', 'S/ 16.00'), item('Tipakay + verduras + chaufa', 'S/ 18.00'), item('Tipakay + chaufa', 'S/ 19.00'), item('Limonkay + chaufa', 'S/ 19.00'),
+      item('Aeropuerto con pollo', 'S/ 14.00'), item('Aeropuerto con chancho', 'S/ 16.00'), item('Aeropuerto con carne', 'S/ 17.00'), item('Aeropuerto con langostino', 'S/ 19.00'), item('Aeropuerto especial', 'S/ 21.00'), item('Aeropuerto a lo pobre', 'S/ 18.00'),
+      item('Tallarín con pollo', 'S/ 14.00'), item('Tallarín con chancho', 'S/ 15.00'), item('Tallarín con carne', 'S/ 17.00'), item('Tallarín con langostino', 'S/ 19.00'), item('Tallarín especial', 'S/ 20.00'),
+      item('Salvaje con pollo', 'S/ 16.00'), item('Salvaje con chancho', 'S/ 17.00'), item('Salvaje con carne', 'S/ 18.00'), item('Salvaje con langostino', 'S/ 19.00'), item('Salvaje especial', 'S/ 20.00'),
+      item('Combinado con pollo', 'S/ 15.00'), item('Combinado con chancho', 'S/ 16.00'), item('Combinado con carne', 'S/ 17.00'), item('Combinado con langostino', 'S/ 18.00'), item('Combinado especial', 'S/ 19.00'),
     ],
   },
   {
     id: 'amazonica', nombre: 'Comida amazónica',
     items: [
-      item('Cecina + patacones', 'S/ 15.00'), item('Chorizo + patacones', 'S/ 15.00'), item('Cecina + chorizo + patacones', 'S/ 20.00'),
-      item('Cecina + plátano frito', 'S/ 10.00'), item('Chorizo + plátano frito', 'S/ 10.00'), item('Cecina + chorizo + plátano frito', 'S/ 15.00'),
-      item('Chaufa amazónico', 'S/ 17.00'), item('Chaufa amazónico + patacones', 'S/ 20.00'), item('Chaufa amazónico + plátano frito', 'S/ 18.00'),
+      item('Chorizo + plátano', 'S/ 15.00'), item('Cecina + plátano', 'S/ 15.00'), item('Chaufa amazónico', 'S/ 17.00'), item('Chaufa amazónico + plátano', 'S/ 20.00'),
     ],
   },
   {
@@ -85,15 +83,21 @@ export const DEFAULT_MENU_DATA: Category[] = [
   {
     id: 'sopas', nombre: 'Sopas',
     items: [
-      item('Sopa con pollo', 'S/ 7.50'), item('Sopa Kion', 'S/ 8.50'), item('Sopa Wantán', 'S/ 8.00'), item('Sopa Wantán especial', 'S/ 11.00'), item('Sustancia con pollo', 'S/ 9.00'), item('Sustancia con carne', 'S/ 12.00'),
+      item('Sopa con pollo', 'S/ 9.00'), item('Sopa Kion', 'S/ 10.00'), item('Sopa Wantán', 'S/ 10.00'), item('Sopa Wantán especial', 'S/ 13.00'), item('Sustancia con pollo', 'S/ 11.00'), item('Sustancia con carne', 'S/ 13.00'),
     ],
   },
   {
     id: 'bebidas', nombre: 'Bebidas',
     items: [
-      item('Inca Kola / Coca Cola 3.5 L', 'S/ 15.00'), item('Inca Kola / Coca Cola 2.5 L', 'S/ 12.00'), item('Inca Kola / Coca Cola 1.5 L', 'S/ 9.00'), item('Inca Kola / Coca Cola 1 L', 'S/ 7.00'), item('Gordita', 'S/ 4.00'), item('Inca Kola / Coca Cola 600 ml', 'S/ 4.00'), item('Inca Kola / Coca Cola vidrio', 'S/ 3.00'),
-      item('Pepsi 1.5 L', 'S/ 6.00'), item('Pepsi Jumbo', 'S/ 4.00'), item('Pepsi 450 ml', 'S/ 2.50'), item('Pepsi 355 ml', 'S/ 2.00'), item('Sprite o Fanta', 'S/ 3.00'), item('Agua Cielo', 'S/ 2.00'), item('Agua San Luis', 'S/ 2.50'), item('Cerveza Pilsen', 'S/ 8.00'), item('Cerveza Cusqueña Negra', 'S/ 9.00'),
-      item('1 L de chicha morada', 'S/ 10.00'), item('1 L de maracuyá', 'S/ 10.00'), item('1/2 de chicha morada', 'S/ 5.00'), item('1/3 de maracuyá', 'S/ 5.00'),
+      item('Inca Kola / Coca Cola 3 L', 'S/ 17.00'), item('Inca Kola / Coca Cola 2.5 L', 'S/ 12.00'), item('Inca Kola / Coca Cola 1.5 L', 'S/ 10.00'), item('Inca Kola / Coca Cola 1 L', 'S/ 8.00'), item('Gordita', 'S/ 5.00'), item('Inca Kola / Coca Cola 600 ml', 'S/ 4.00'), item('Inca Kola / Coca Cola vidrio', 'S/ 4.00'),
+      item('Pepsi 1.5 L', 'S/ 6.00'), item('Pepsi Jumbo', 'S/ 4.00'), item('Pepsi 450 ml', 'S/ 2.50'), item('Pepsi 355 ml', 'S/ 2.00'), item('Sprite o Fanta', 'S/ 3.00'), item('Agua Cielo', 'S/ 2.00'), item('Agua San Luis', 'S/ 2.50'), item('Cerveza Pilsen', 'S/ 9.00'), item('Cerveza Cusqueña Negra', 'S/ 10.00'), item('Cerveza en lata Tres Cruces Negra', 'S/ 5.00'),
+      item('1 L de chicha morada', 'S/ 12.00'), item('1 L de maracuyá', 'S/ 14.00'), item('1/2 de chicha morada', 'S/ 6.00'), item('1/2 de maracuyá', 'S/ 7.00'),
+    ],
+  },
+  {
+    id: 'frappes', nombre: 'Frappe',
+    items: [
+      item('Frappe de fresa', 'S/ 15.00'), item('Frappe de Oreo', 'S/ 15.00'), item('Frappe de café', 'S/ 15.00'), item('Frappe de mango', 'S/ 15.00'), item('Frappe de maracuyá', 'S/ 15.00'), item('Frappe de arándano', 'S/ 15.00'),
     ],
   },
 ];
