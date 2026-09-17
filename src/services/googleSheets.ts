@@ -100,6 +100,13 @@ const defaultDishesByKey = new Map<string, Dish>(
   DEFAULT_MENU_DATA.flatMap((cat) => cat.items).map((dish) => [dishKey(dish.nombre), dish])
 );
 
+const polloVerdurasDish = defaultDishesByKey.get('pollo con verduras');
+if (polloVerdurasDish) {
+  defaultDishesByKey.set('tipakay verduras chaufa', polloVerdurasDish);
+  defaultDishesByKey.set('pollo con verduras chaufa', polloVerdurasDish);
+  defaultDishesByKey.set('pollo verduras chaufa', polloVerdurasDish);
+}
+
 export const fetchMenuFromSheet = async (): Promise<Category[] | null> => {
   const [categoryRows, dishRows] = await Promise.all([
     fetchSheetData<SheetCategory>(SHEET_TABS.categories),
