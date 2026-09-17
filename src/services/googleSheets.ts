@@ -1,5 +1,5 @@
 import Papa from 'papaparse';
-import type { Category, Dish } from '../data/menuData';
+import { DEFAULT_MENU_DATA, type Category, type Dish } from '../data/menuData';
 
 // La hoja debe permitir lectura pública o estar publicada en la web.
 export const SHEET_ID = '1e_nU52REiZWGdaSOw9e5cqpjsW_QL8FAy68jzTzR2uM';
@@ -88,6 +88,18 @@ export const fetchSheetData = async <T extends SheetRow>(sheetName: string): Pro
  * Categorías: nombre, orden, visible
  * Platos: categoria, nombre, descripcion, precio, url_imagen, cuadrante, orden, visible
  */
+const dishKey = (name: string) => name
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase()
+  .replace(/\bde\b/g, 'con')
+  .replace(/[^a-z0-9]+/g, ' ')
+  .trim();
+
+const defaultDishesByKey = new Map<string, Dish>(
+  DEFAULT_MENU_DATA.flatMap((cat) => cat.items).map((dish) => [dishKey(dish.nombre), dish])
+);
+
 export const fetchMenuFromSheet = async (): Promise<Category[] | null> => {
   const [categoryRows, dishRows] = await Promise.all([
     fetchSheetData<SheetCategory>(SHEET_TABS.categories),
@@ -119,13 +131,27 @@ export const fetchMenuFromSheet = async (): Promise<Category[] | null> => {
       if (!category || !nombre || !rawPrice) return;
 
       const descripcion = value(row, 'descripcion', 'descripción', 'Descripción');
-      const imagen = value(row, 'url_imagen', 'URL de imagen', 'imagen');
+      let imagen: string | undefined = value(row, 'url_imagen', 'URL de imagen', 'imagen') || undefined;
+      let cuadrante = validQuadrant(value(row, 'cuadrante', 'Cuadrante'));
+
+      // Si en Google Sheets viene vacía o viene la imagen en cuadrícula antigua (/menu-grid-*)
+      // y en el código local ya tenemos una foto dedicada e individual, priorizamos la local:
+      const defaultDish = defaultDishesByKey.get(dishKey(nombre));
+      if (defaultDish && defaultDish.imagen) {
+        const isSheetGrid = !imagen || imagen.includes('/menu-grid-');
+        const isLocalDedicated = !defaultDish.imagen.includes('/menu-grid-') && !defaultDish.cuadrante;
+        if (isSheetGrid && isLocalDedicated) {
+          imagen = defaultDish.imagen;
+          cuadrante = undefined;
+        }
+      }
+
       category.items.push({
         nombre,
         precio: price(rawPrice),
         descripcion: descripcion || undefined,
-        imagen: imagen || undefined,
-        cuadrante: validQuadrant(value(row, 'cuadrante', 'Cuadrante')),
+        imagen,
+        cuadrante,
       });
     });
 

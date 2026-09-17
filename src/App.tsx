@@ -174,7 +174,7 @@ export default function App() {
     <div className="site-shell">
       <div className="menu-page">
         <header className="topbar">
-          <a href="#inicio" className="header-logo" aria-label="Inicio de Leonardo's"><img src="/logo-leonardos.png" alt="Pollos a la Brasa Leonardo's & Chifa" /></a>
+          <a href="#inicio" className="header-logo" aria-label="Inicio de Leonardo's"><img src="/logo-leonardos.webp" alt="Pollos a la Brasa Leonardo's & Chifa" /></a>
           <div className="header-actions">
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="phone-action" aria-label={`Escribir al WhatsApp ${WHATSAPP_DISPLAY}`}><MessageCircle size={16} /> <span>{WHATSAPP_DISPLAY}</span></a>
             <button className="cart-icon" onClick={() => cartCount > 0 && setShowCart(true)} aria-label="Ver pedido"><ShoppingBag size={21} />{cartCount > 0 && <span>{cartCount}</span>}</button>
@@ -185,7 +185,7 @@ export default function App() {
         <div className="ember-strip" aria-hidden="true"><span>POLLOS A LA BRASA · CHIFA · PARRILLAS · PEDIDOS POR WHATSAPP AL {WHATSAPP_DISPLAY} · </span><span>POLLOS A LA BRASA · CHIFA · PARRILLAS · PEDIDOS POR WHATSAPP AL {WHATSAPP_DISPLAY} · </span></div>
 
         <section id="inicio" className="hero-section">
-          <img className="hero-image" src="/hero-parrilla.png" alt="Pollo dorado a la parrilla sobre brasas" /><div className="hero-shade" />
+          <img className="hero-image" src="/hero-parrilla.webp" alt="Pollo dorado a la parrilla sobre brasas" /><div className="hero-shade" />
           <div className="hero-content">
             <div className="hero-kicker"><Flame size={16} fill="currentColor" /> Desde la brasa a tu mesa</div>
             <h1>El sabor que<br /><em>enciende</em> el antojo.</h1>
@@ -223,7 +223,7 @@ export default function App() {
         </main>
 
         <footer className="site-footer">
-          <img src="/logo-leonardos.png" alt="Leonardo's" /><p>Pollo a la brasa · Chifa · Parrillas</p>
+          <img src="/logo-leonardos.webp" alt="Leonardo's" /><p>Pollo a la brasa · Chifa · Parrillas</p>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={16} /> WhatsApp: {WHATSAPP_DISPLAY}</a>
           <div className="social-links"><a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"><Facebook size={17} /> Síguenos en Facebook</a><a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer"><Music2 size={17} /> Síguenos en TikTok</a></div>
           <span>© 2026 Leonardo's. Todos los derechos reservados.</span>
