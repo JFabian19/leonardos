@@ -316,6 +316,7 @@ button:focus-visible, a:focus-visible {
 .whatsapp-button { border-color: #57e48b; background: linear-gradient(180deg, #31d96c 0%, #20bf56 100%); box-shadow: 0 4px 0 #139b45, 0 8px 16px rgba(19,155,69,.16); text-transform: none; font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0; }
 .whatsapp-button:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #139b45, 0 12px 20px rgba(19,155,69,.22); filter: brightness(1.04); }
 .whatsapp-button:active { transform: translateY(2px); box-shadow: 0 2px 0 #139b45; }
+.whatsapp-button-logo { width: 22px; height: 22px; object-fit: contain; display: block; flex-shrink: 0; }
 .checkout-submit { margin-top: 15px; }
 
 @media (max-width: 450px) {

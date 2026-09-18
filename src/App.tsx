@@ -322,7 +322,9 @@ export default function App() {
                   )}
                   <div className="checkout-total"><span>Total</span><strong>S/ {checkoutTotal.toFixed(2)}</strong></div>
                 </div>
-                <button className="whatsapp-button checkout-submit" type="submit"><MessageCircle size={20} /> Enviar pedido por WhatsApp</button>
+                <button className="whatsapp-button checkout-submit" type="submit">
+                  <img src="/whatsapp-logo.png" alt="" className="whatsapp-button-logo" aria-hidden="true" /> Enviar pedido por WhatsApp
+                </button>
               </form>
             </motion.div>
           </motion.div>
