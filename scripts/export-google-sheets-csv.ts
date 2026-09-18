@@ -14,33 +14,31 @@ const toCsv = (headers: string[], rows: Array<Array<string | number | undefined>
   ...rows.map((row) => row.map(escapeCsv).join(',')),
 ].join('\r\n') + '\r\n';
 
-const categoryRows = DEFAULT_MENU_DATA.map((category, index) => [
+const categoryRows = DEFAULT_MENU_DATA.map((category) => [
   category.nombre,
-  index + 1,
   'TRUE',
 ]);
 
-const dishRows = DEFAULT_MENU_DATA.flatMap((category) => category.items.map((dish, index) => [
+const dishRows = DEFAULT_MENU_DATA.flatMap((category) => category.items.map((dish) => [
   category.nombre,
   dish.nombre,
   dish.descripcion,
   dish.precio,
   dish.imagen,
   dish.cuadrante,
-  index + 1,
   'TRUE',
 ]));
 
 await Promise.all([
   writeFile(
     resolve(outputDirectory, 'categorias.csv'),
-    toCsv(['nombre', 'orden', 'visible'], categoryRows),
+    toCsv(['nombre', 'visible'], categoryRows),
     'utf8',
   ),
   writeFile(
     resolve(outputDirectory, 'platos.csv'),
     toCsv(
-      ['categoria', 'nombre', 'descripcion', 'precio', 'url_imagen', 'cuadrante', 'orden', 'visible'],
+      ['categoria', 'nombre', 'descripcion', 'precio', 'url_imagen', 'cuadrante', 'visible'],
       dishRows,
     ),
     'utf8',

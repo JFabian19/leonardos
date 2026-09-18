@@ -68,6 +68,15 @@ export const DEFAULT_MENU_DATA: Category[] = [
     ],
   },
   {
+    id: 'parrillas',
+    nombre: 'Parrillas',
+    items: [
+      item('Pechuga a la parrilla', 'S/ 20.00', 'Papas fritas + ensalada', '/pechuga-parrilla.webp'),
+      item('Bisteck a la parrilla', 'S/ 25.00', 'Papas fritas + ensalada', '/bistec-parrilla.webp'),
+      item('Chuleta a la parrilla', 'S/ 22.00', 'Papas fritas + ensalada', '/chuleta-parrilla.webp'),
+    ],
+  },
+  {
     id: 'platos-a-la-carta',
     nombre: 'Platos a la carta',
     items: [

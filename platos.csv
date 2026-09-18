@@ -1,93 +1,96 @@
-categoria,nombre,descripcion,precio,url_imagen,cuadrante,orden,visible
-Pollos a la brasa,1 pollo entero,Papas fritas + ensalada,S/ 55.00,/pollo-brasa-entero.webp,,1,TRUE
-Pollos a la brasa,1/2 pollo,Papas fritas + ensalada,S/ 30.00,/pollo-brasa-medio-referencia.webp,,2,TRUE
-Pollos a la brasa,1/4 de pollo,Papas fritas + ensalada,S/ 15.00,/pollo-brasa-cuarto-referencia.webp,,3,TRUE
-Pollos a la brasa,Mostro 1/4 de pollo,Chaufa + papas fritas + ensalada,S/ 18.00,/pollo-mostro-referencia.webp,,4,TRUE
-Pollos a la brasa,Mostrito 1/8 de pollo,Chaufa + papas fritas + ensalada,S/ 13.00,/pollo-mostrito-octavo.webp,,5,TRUE
-Promociones,Promoción de 1 pollo entero y 1/2 pollo,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 75.00,/promo-especial-medio.webp,,1,TRUE
-Promociones,Promoción de 1 pollo entero y 1/2 pollo,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 66.00,/promo-especial-medio.webp,,2,TRUE
-Promociones,Promoción de 1 pollo entero y 1/4 de pollo,1 pollo entero + 1/4 pollo solo + chaufa + papas fritas + ensalada,S/ 73.00,/promo-especial-chaufa.webp,,3,TRUE
-Promo Pepsi,1/4 de pollo – Promo Pepsi,Papas fritas + ensalada + Pepsi 450 ml,S/ 17.00,/combo-cuarto-pepsi.webp,,1,TRUE
-Promo Pepsi,1/2 pollo – Promo Pepsi,Papas fritas + ensalada + Pepsi Jumbo,S/ 32.00,/combo-medio-pepsi.webp,,2,TRUE
-Promo Pepsi,1 pollo entero – Promo Pepsi,Papas fritas + ensalada + Pepsi 1.5 L,S/ 58.00,/combo-entero-pepsi.webp,,3,TRUE
-Promo Pepsi,Mostrito – Promo Pepsi,Chaufa + papas fritas + ensalada + Pepsi 355 ml,S/ 14.00,/combo-octavo-mostrito-pepsi.webp,,4,TRUE
-Promo Pepsi,Mostro – Promo Pepsi,Chaufa + papas fritas + ensalada + Pepsi 450 ml,S/ 19.00,/combo-cuarto-mostrito-pepsi.webp,,5,TRUE
-Promo Pepsi,1 pollo entero – Promo familiar Pepsi,1 pollo + papas fritas + ensalada + Pepsi 1.5 L + 1/4 pollo solo o chaufa,S/ 71.00,/combo-pepsi-familiar.webp,,6,TRUE
-Salchibrasa,Salchibrasa de 1/4 de pollo,1/4 pollo + papas fritas + ensalada + hot dog,S/ 19.00,/salchibrasa-cuarto.webp,,1,TRUE
-Salchibrasa,Salchibrasa Mostro,1/4 pollo + chaufa + papas fritas + ensalada + hot dog,S/ 20.00,/salchibrasa-mostro.webp,,2,TRUE
-Salchibrasa,Salchibrasa Mostrito,1/8 pollo + chaufa + papas fritas + ensalada + hot dog,S/ 16.00,/salchibrasa-mostrito.webp,,3,TRUE
-Salchibrasa,Salchibrasa de 1/8 de pollo,1/8 pollo + papas fritas + ensalada + hot dog,S/ 14.00,/salchibrasa-octavo.webp,,4,TRUE
-Brasa a lo pobre,1/4 de pollo a lo pobre,1/4 pollo + papas fritas + ensalada + plátano frito + huevo frito,S/ 21.00,/brasa-pobre-cuarto.webp,,1,TRUE
-Brasa a lo pobre,Mostro a lo pobre,1/4 pollo + chaufa + papas fritas + ensalada + plátano frito + huevo frito,S/ 23.00,/brasa-pobre-mostro.webp,,2,TRUE
-Brasa a lo pobre,Mostrito a lo pobre,1/8 pollo + chaufa + papas fritas + ensalada + plátano frito + huevo frito,S/ 18.00,/brasa-pobre-mostrito.webp,,3,TRUE
-Platos a la carta,Lomo de carne,,S/ 18.00,/lomo-saltado.webp,,1,TRUE
-Platos a la carta,Lomo de carne a lo pobre,,S/ 21.00,/lomo-saltado-pobre.webp,,2,TRUE
-Platos a la carta,Saltado de pollo,,S/ 16.00,/saltado-pollo.webp,,3,TRUE
-Platos a la carta,Pollo a la plancha,Papas fritas + arroz blanco + ensalada,S/ 18.00,/pollo-plancha.webp,,4,TRUE
-Chifa - Chaufa,Chaufa con pollo,,S/ 12.00,/chaufa-pollo.webp,,1,TRUE
-Chifa - Chaufa,Chaufa con chancho,,S/ 15.00,/menu-grid-05-chaufas.webp,tr,2,TRUE
-Chifa - Chaufa,Chaufa con carne,,S/ 16.00,/menu-grid-05-chaufas.webp,bl,3,TRUE
-Chifa - Chaufa,Chaufa con langostino,,S/ 19.00,/menu-grid-05-chaufas.webp,br,4,TRUE
-Chifa - Chaufa,Chaufa especial,,S/ 20.00,/chaufa-especial.webp,,5,TRUE
-Chifa - Chaufa,Chaufa a lo pobre,,S/ 16.00,/chaufa-pobre.webp,,6,TRUE
-Chifa - Chaufa,Pollo con verduras y chaufa,,S/ 18.00,/pollo-verduras-chaufa.webp,,7,TRUE
-Chifa - Chaufa,Tipakay con chaufa,,S/ 19.00,/tipakay-chaufa.webp,,8,TRUE
-Chifa - Chaufa,Limonkay con chaufa,,S/ 19.00,/limonkay-chaufa.webp,,9,TRUE
-Chifa - Aeropuerto,Aeropuerto con pollo,,S/ 14.00,/aeropuerto-pollo.webp,,1,TRUE
-Chifa - Aeropuerto,Aeropuerto con chancho,,S/ 16.00,/aeropuerto-chancho.webp,,2,TRUE
-Chifa - Aeropuerto,Aeropuerto con carne,,S/ 17.00,/aeropuerto-carne.webp,,3,TRUE
-Chifa - Aeropuerto,Aeropuerto con langostino,,S/ 19.00,/aeropuerto-langostino.webp,,4,TRUE
-Chifa - Aeropuerto,Aeropuerto especial,,S/ 21.00,/aeropuerto-especial.webp,,5,TRUE
-Chifa - Aeropuerto,Aeropuerto a lo pobre,,S/ 18.00,/aeropuerto-pobre.webp,,6,TRUE
-Chifa - Tallarín,Tallarín con pollo,,S/ 14.00,/tallarin-pollo.webp,,1,TRUE
-Chifa - Tallarín,Tallarín con chancho,,S/ 15.00,/tallarin-chancho.webp,,2,TRUE
-Chifa - Tallarín,Tallarín con carne,,S/ 17.00,/tallarin-carne.webp,,3,TRUE
-Chifa - Tallarín,Tallarín con langostino,,S/ 19.00,/tallarin-langostino.webp,,4,TRUE
-Chifa - Tallarín,Tallarín especial,,S/ 20.00,/tallarin-especial.webp,,5,TRUE
-Chifa - Salvaje,Salvaje con pollo,,S/ 16.00,/salvaje-pollo.webp,,1,TRUE
-Chifa - Salvaje,Salvaje con chancho,,S/ 17.00,/salvaje-chancho.webp,,2,TRUE
-Chifa - Salvaje,Salvaje con carne,,S/ 18.00,/salvaje-carne.webp,,3,TRUE
-Chifa - Salvaje,Salvaje con langostino,,S/ 19.00,/salvaje-langostino.webp,,4,TRUE
-Chifa - Salvaje,Salvaje especial,,S/ 20.00,/salvaje-especial.webp,,5,TRUE
-Chifa - Combinado,Combinado con pollo,,S/ 15.00,/combinado.webp,,1,TRUE
-Chifa - Combinado,Combinado con chancho,,S/ 16.00,/combinado-chancho.webp,,2,TRUE
-Chifa - Combinado,Combinado con carne,,S/ 17.00,/combinado-carne.webp,,3,TRUE
-Chifa - Combinado,Combinado con langostino,,S/ 18.00,/combinado-langostino.webp,,4,TRUE
-Chifa - Combinado,Combinado especial,,S/ 19.00,/combinado-especial.webp,,5,TRUE
-Sopas,Sopa con pollo,,S/ 9.00,/sopa-pollo.webp,,1,TRUE
-Sopas,Sopa con kion,,S/ 10.00,/sopa-kion.webp,,2,TRUE
-Sopas,Sopa wantán,,S/ 10.00,/sopa-wantan.webp,,3,TRUE
-Sopas,Sopa wantán especial,,S/ 13.00,/sopa-wantan-especial.webp,,4,TRUE
-Sopas,Sustancia con pollo,,S/ 11.00,/sustancia-pollo.webp,,5,TRUE
-Sopas,Sustancia con carne,,S/ 13.00,/sustancia-carne.webp,,6,TRUE
-Comida amazónica,Chorizo con plátano,,S/ 15.00,/chorizo-platano.webp,,1,TRUE
-Comida amazónica,Cecina con plátano,,S/ 15.00,/cecina-platano.webp,,2,TRUE
-Comida amazónica,Chaufa amazónico,,S/ 17.00,/chaufa-amazonico.webp,,3,TRUE
-Comida amazónica,Chaufa amazónico con plátano,,S/ 20.00,/chaufa-amazonico-platano.webp,,4,TRUE
-Gaseosas y cervezas,Inca Kola o Coca-Cola de 3 litros,,S/ 17.00,/bebida-inca-3l.webp,,1,TRUE
-Gaseosas y cervezas,Inca Kola o Coca-Cola de 2.5 litros,,S/ 12.00,/bebida-inca-2-5l.webp,,2,TRUE
-Gaseosas y cervezas,Inca Kola o Coca-Cola de 1.5 litros,,S/ 10.00,/bebida-inca-1-5l.webp,,3,TRUE
-Gaseosas y cervezas,Inca Kola o Coca-Cola de 1 litro,,S/ 8.00,/bebida-inca-1l.webp,,4,TRUE
-Gaseosas y cervezas,Gordita,,S/ 5.00,/bebida-gordita.webp,,5,TRUE
-Gaseosas y cervezas,Inca Kola o Coca-Cola de 600 ml,,S/ 4.00,/bebida-inca-600.webp,,6,TRUE
-Gaseosas y cervezas,Inca Kola o Coca-Cola en botella de vidrio,,S/ 4.00,/bebida-inca-vidrio.webp,,7,TRUE
-Gaseosas y cervezas,Pepsi de 1.5 litros,,S/ 6.00,/bebida-pepsi-1-5l.webp,,8,TRUE
-Gaseosas y cervezas,Pepsi Jumbo,,S/ 4.00,/bebida-pepsi-jumbo.webp,,9,TRUE
-Gaseosas y cervezas,Pepsi de 450 ml,,S/ 2.50,/bebida-pepsi-450.webp,,10,TRUE
-Gaseosas y cervezas,Pepsi de 355 ml,,S/ 2.00,/bebida-pepsi-355.webp,,11,TRUE
-Gaseosas y cervezas,Sprite o Fanta,,S/ 3.00,/bebida-sprite-fanta.webp,,12,TRUE
-Gaseosas y cervezas,Agua Cielo,,S/ 2.00,/bebida-agua-cielo.webp,,13,TRUE
-Gaseosas y cervezas,Agua San Luis,,S/ 2.50,/bebida-agua-san-luis.webp,,14,TRUE
-Gaseosas y cervezas,Cerveza Pilsen,,S/ 9.00,/bebida-pilsen.webp,,15,TRUE
-Gaseosas y cervezas,Cerveza Cusqueña Negra,,S/ 10.00,/bebida-cusquena.webp,,16,TRUE
-Gaseosas y cervezas,Cerveza en lata Tres Cruces Negra,,S/ 5.00,/bebida-tres-cruces.webp,,17,TRUE
-Bebidas heladas,Chicha morada de 1 litro,,S/ 12.00,/bebida-chicha-1l.webp,,1,TRUE
-Bebidas heladas,Maracuyá de 1 litro,,S/ 14.00,/bebida-maracuya-1l.webp,,2,TRUE
-Bebidas heladas,Chicha morada de 1/2 litro,,S/ 6.00,/bebida-chicha-medio.webp,,3,TRUE
-Bebidas heladas,Maracuyá de 1/2 litro,,S/ 7.00,/bebida-maracuya-medio.webp,,4,TRUE
-Frappés,Frappé de fresa,,S/ 15.00,/frappe-fresa.webp,,1,TRUE
-Frappés,Frappé de Oreo,,S/ 15.00,/frappe-oreo.webp,,2,TRUE
-Frappés,Frappé de café,,S/ 15.00,/frappe-cafe.webp,,3,TRUE
-Frappés,Frappé de mango,,S/ 15.00,/frappe-mango.webp,,4,TRUE
-Frappés,Frappé de maracuyá,,S/ 15.00,/frappe-maracuya.webp,,5,TRUE
-Frappés,Frappé de arándano,,S/ 15.00,/frappe-arandano.webp,,6,TRUE
+categoria,nombre,descripcion,precio,url_imagen,cuadrante,visible
+Pollos a la brasa,1 pollo entero,Papas fritas + ensalada,S/ 55.00,/pollo-brasa-entero.webp,,TRUE
+Pollos a la brasa,1/2 pollo,Papas fritas + ensalada,S/ 30.00,/pollo-brasa-medio-referencia.webp,,TRUE
+Pollos a la brasa,1/4 de pollo,Papas fritas + ensalada,S/ 15.00,/pollo-brasa-cuarto-referencia.webp,,TRUE
+Pollos a la brasa,Mostro 1/4 de pollo,Chaufa + papas fritas + ensalada,S/ 18.00,/pollo-mostro-referencia.webp,,TRUE
+Pollos a la brasa,Mostrito 1/8 de pollo,Chaufa + papas fritas + ensalada,S/ 13.00,/pollo-mostrito-octavo.webp,,TRUE
+Promociones,Promoción de 1 pollo entero y 1/2 pollo,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 75.00,/promo-especial-medio.webp,,TRUE
+Promociones,Promoción de 1 pollo entero y 1/2 pollo,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 66.00,/promo-especial-medio.webp,,TRUE
+Promociones,Promoción de 1 pollo entero y 1/4 de pollo,1 pollo entero + 1/4 pollo solo + chaufa + papas fritas + ensalada,S/ 73.00,/promo-especial-chaufa.webp,,TRUE
+Promo Pepsi,1/4 de pollo – Promo Pepsi,Papas fritas + ensalada + Pepsi 450 ml,S/ 17.00,/combo-cuarto-pepsi.webp,,TRUE
+Promo Pepsi,1/2 pollo – Promo Pepsi,Papas fritas + ensalada + Pepsi Jumbo,S/ 32.00,/combo-medio-pepsi.webp,,TRUE
+Promo Pepsi,1 pollo entero – Promo Pepsi,Papas fritas + ensalada + Pepsi 1.5 L,S/ 58.00,/combo-entero-pepsi.webp,,TRUE
+Promo Pepsi,Mostrito – Promo Pepsi,Chaufa + papas fritas + ensalada + Pepsi 355 ml,S/ 14.00,/combo-octavo-mostrito-pepsi.webp,,TRUE
+Promo Pepsi,Mostro – Promo Pepsi,Chaufa + papas fritas + ensalada + Pepsi 450 ml,S/ 19.00,/combo-cuarto-mostrito-pepsi.webp,,TRUE
+Promo Pepsi,1 pollo entero – Promo familiar Pepsi,1 pollo + papas fritas + ensalada + Pepsi 1.5 L + 1/4 pollo solo o chaufa,S/ 71.00,/combo-pepsi-familiar.webp,,TRUE
+Salchibrasa,Salchibrasa de 1/4 de pollo,1/4 pollo + papas fritas + ensalada + hot dog,S/ 19.00,/salchibrasa-cuarto.webp,,TRUE
+Salchibrasa,Salchibrasa Mostro,1/4 pollo + chaufa + papas fritas + ensalada + hot dog,S/ 20.00,/salchibrasa-mostro.webp,,TRUE
+Salchibrasa,Salchibrasa Mostrito,1/8 pollo + chaufa + papas fritas + ensalada + hot dog,S/ 16.00,/salchibrasa-mostrito.webp,,TRUE
+Salchibrasa,Salchibrasa de 1/8 de pollo,1/8 pollo + papas fritas + ensalada + hot dog,S/ 14.00,/salchibrasa-octavo.webp,,TRUE
+Brasa a lo pobre,1/4 de pollo a lo pobre,1/4 pollo + papas fritas + ensalada + plátano frito + huevo frito,S/ 21.00,/brasa-pobre-cuarto.webp,,TRUE
+Brasa a lo pobre,Mostro a lo pobre,1/4 pollo + chaufa + papas fritas + ensalada + plátano frito + huevo frito,S/ 23.00,/brasa-pobre-mostro.webp,,TRUE
+Brasa a lo pobre,Mostrito a lo pobre,1/8 pollo + chaufa + papas fritas + ensalada + plátano frito + huevo frito,S/ 18.00,/brasa-pobre-mostrito.webp,,TRUE
+Parrillas,Pechuga a la parrilla,Papas fritas + ensalada,S/ 20.00,/pechuga-parrilla.webp,,TRUE
+Parrillas,Bisteck a la parrilla,Papas fritas + ensalada,S/ 25.00,/bistec-parrilla.webp,,TRUE
+Parrillas,Chuleta a la parrilla,Papas fritas + ensalada,S/ 22.00,/chuleta-parrilla.webp,,TRUE
+Platos a la carta,Lomo de carne,,S/ 18.00,/lomo-saltado.webp,,TRUE
+Platos a la carta,Lomo de carne a lo pobre,,S/ 21.00,/lomo-saltado-pobre.webp,,TRUE
+Platos a la carta,Saltado de pollo,,S/ 16.00,/saltado-pollo.webp,,TRUE
+Platos a la carta,Pollo a la plancha,Papas fritas + arroz blanco + ensalada,S/ 18.00,/pollo-plancha.webp,,TRUE
+Chifa - Chaufa,Chaufa con pollo,,S/ 12.00,/chaufa-pollo.webp,,TRUE
+Chifa - Chaufa,Chaufa con chancho,,S/ 15.00,/menu-grid-05-chaufas.webp,tr,TRUE
+Chifa - Chaufa,Chaufa con carne,,S/ 16.00,/menu-grid-05-chaufas.webp,bl,TRUE
+Chifa - Chaufa,Chaufa con langostino,,S/ 19.00,/menu-grid-05-chaufas.webp,br,TRUE
+Chifa - Chaufa,Chaufa especial,,S/ 20.00,/chaufa-especial.webp,,TRUE
+Chifa - Chaufa,Chaufa a lo pobre,,S/ 16.00,/chaufa-pobre.webp,,TRUE
+Chifa - Chaufa,Pollo con verduras y chaufa,,S/ 18.00,/pollo-verduras-chaufa.webp,,TRUE
+Chifa - Chaufa,Tipakay con chaufa,,S/ 19.00,/tipakay-chaufa.webp,,TRUE
+Chifa - Chaufa,Limonkay con chaufa,,S/ 19.00,/limonkay-chaufa.webp,,TRUE
+Chifa - Aeropuerto,Aeropuerto con pollo,,S/ 14.00,/aeropuerto-pollo.webp,,TRUE
+Chifa - Aeropuerto,Aeropuerto con chancho,,S/ 16.00,/aeropuerto-chancho.webp,,TRUE
+Chifa - Aeropuerto,Aeropuerto con carne,,S/ 17.00,/aeropuerto-carne.webp,,TRUE
+Chifa - Aeropuerto,Aeropuerto con langostino,,S/ 19.00,/aeropuerto-langostino.webp,,TRUE
+Chifa - Aeropuerto,Aeropuerto especial,,S/ 21.00,/aeropuerto-especial.webp,,TRUE
+Chifa - Aeropuerto,Aeropuerto a lo pobre,,S/ 18.00,/aeropuerto-pobre.webp,,TRUE
+Chifa - Tallarín,Tallarín con pollo,,S/ 14.00,/tallarin-pollo.webp,,TRUE
+Chifa - Tallarín,Tallarín con chancho,,S/ 15.00,/tallarin-chancho.webp,,TRUE
+Chifa - Tallarín,Tallarín con carne,,S/ 17.00,/tallarin-carne.webp,,TRUE
+Chifa - Tallarín,Tallarín con langostino,,S/ 19.00,/tallarin-langostino.webp,,TRUE
+Chifa - Tallarín,Tallarín especial,,S/ 20.00,/tallarin-especial.webp,,TRUE
+Chifa - Salvaje,Salvaje con pollo,,S/ 16.00,/salvaje-pollo.webp,,TRUE
+Chifa - Salvaje,Salvaje con chancho,,S/ 17.00,/salvaje-chancho.webp,,TRUE
+Chifa - Salvaje,Salvaje con carne,,S/ 18.00,/salvaje-carne.webp,,TRUE
+Chifa - Salvaje,Salvaje con langostino,,S/ 19.00,/salvaje-langostino.webp,,TRUE
+Chifa - Salvaje,Salvaje especial,,S/ 20.00,/salvaje-especial.webp,,TRUE
+Chifa - Combinado,Combinado con pollo,,S/ 15.00,/combinado.webp,,TRUE
+Chifa - Combinado,Combinado con chancho,,S/ 16.00,/combinado-chancho.webp,,TRUE
+Chifa - Combinado,Combinado con carne,,S/ 17.00,/combinado-carne.webp,,TRUE
+Chifa - Combinado,Combinado con langostino,,S/ 18.00,/combinado-langostino.webp,,TRUE
+Chifa - Combinado,Combinado especial,,S/ 19.00,/combinado-especial.webp,,TRUE
+Sopas,Sopa con pollo,,S/ 9.00,/sopa-pollo.webp,,TRUE
+Sopas,Sopa con kion,,S/ 10.00,/sopa-kion.webp,,TRUE
+Sopas,Sopa wantán,,S/ 10.00,/sopa-wantan.webp,,TRUE
+Sopas,Sopa wantán especial,,S/ 13.00,/sopa-wantan-especial.webp,,TRUE
+Sopas,Sustancia con pollo,,S/ 11.00,/sustancia-pollo.webp,,TRUE
+Sopas,Sustancia con carne,,S/ 13.00,/sustancia-carne.webp,,TRUE
+Comida amazónica,Chorizo con plátano,,S/ 15.00,/chorizo-platano.webp,,TRUE
+Comida amazónica,Cecina con plátano,,S/ 15.00,/cecina-platano.webp,,TRUE
+Comida amazónica,Chaufa amazónico,,S/ 17.00,/chaufa-amazonico.webp,,TRUE
+Comida amazónica,Chaufa amazónico con plátano,,S/ 20.00,/chaufa-amazonico-platano.webp,,TRUE
+Gaseosas y cervezas,Inca Kola o Coca-Cola de 3 litros,,S/ 17.00,/bebida-inca-3l.webp,,TRUE
+Gaseosas y cervezas,Inca Kola o Coca-Cola de 2.5 litros,,S/ 12.00,/bebida-inca-2-5l.webp,,TRUE
+Gaseosas y cervezas,Inca Kola o Coca-Cola de 1.5 litros,,S/ 10.00,/bebida-inca-1-5l.webp,,TRUE
+Gaseosas y cervezas,Inca Kola o Coca-Cola de 1 litro,,S/ 8.00,/bebida-inca-1l.webp,,TRUE
+Gaseosas y cervezas,Gordita,,S/ 5.00,/bebida-gordita.webp,,TRUE
+Gaseosas y cervezas,Inca Kola o Coca-Cola de 600 ml,,S/ 4.00,/bebida-inca-600.webp,,TRUE
+Gaseosas y cervezas,Inca Kola o Coca-Cola en botella de vidrio,,S/ 4.00,/bebida-inca-vidrio.webp,,TRUE
+Gaseosas y cervezas,Pepsi de 1.5 litros,,S/ 6.00,/bebida-pepsi-1-5l.webp,,TRUE
+Gaseosas y cervezas,Pepsi Jumbo,,S/ 4.00,/bebida-pepsi-jumbo.webp,,TRUE
+Gaseosas y cervezas,Pepsi de 450 ml,,S/ 2.50,/bebida-pepsi-450.webp,,TRUE
+Gaseosas y cervezas,Pepsi de 355 ml,,S/ 2.00,/bebida-pepsi-355.webp,,TRUE
+Gaseosas y cervezas,Sprite o Fanta,,S/ 3.00,/bebida-sprite-fanta.webp,,TRUE
+Gaseosas y cervezas,Agua Cielo,,S/ 2.00,/bebida-agua-cielo.webp,,TRUE
+Gaseosas y cervezas,Agua San Luis,,S/ 2.50,/bebida-agua-san-luis.webp,,TRUE
+Gaseosas y cervezas,Cerveza Pilsen,,S/ 9.00,/bebida-pilsen.webp,,TRUE
+Gaseosas y cervezas,Cerveza Cusqueña Negra,,S/ 10.00,/bebida-cusquena.webp,,TRUE
+Gaseosas y cervezas,Cerveza en lata Tres Cruces Negra,,S/ 5.00,/bebida-tres-cruces.webp,,TRUE
+Bebidas heladas,Chicha morada de 1 litro,,S/ 12.00,/bebida-chicha-1l.webp,,TRUE
+Bebidas heladas,Maracuyá de 1 litro,,S/ 14.00,/bebida-maracuya-1l.webp,,TRUE
+Bebidas heladas,Chicha morada de 1/2 litro,,S/ 6.00,/bebida-chicha-medio.webp,,TRUE
+Bebidas heladas,Maracuyá de 1/2 litro,,S/ 7.00,/bebida-maracuya-medio.webp,,TRUE
+Frappés,Frappé de fresa,,S/ 15.00,/frappe-fresa.webp,,TRUE
+Frappés,Frappé de Oreo,,S/ 15.00,/frappe-oreo.webp,,TRUE
+Frappés,Frappé de café,,S/ 15.00,/frappe-cafe.webp,,TRUE
+Frappés,Frappé de mango,,S/ 15.00,/frappe-mango.webp,,TRUE
+Frappés,Frappé de maracuyá,,S/ 15.00,/frappe-maracuya.webp,,TRUE
+Frappés,Frappé de arándano,,S/ 15.00,/frappe-arandano.webp,,TRUE
