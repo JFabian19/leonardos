@@ -19,13 +19,12 @@ interface CartItem {
   precio: string;
   cantidad: number;
   cremas: string[];
-  arroz?: 'Con arroz' | 'Sin arroz';
   nota: string;
 }
 
 interface Customization {
   dish: Dish;
-  includeRice: boolean;
+  hasSauces: boolean;
 }
 
 interface DeliveryDetails {
@@ -56,7 +55,6 @@ export default function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [customizing, setCustomizing] = useState<Customization | null>(null);
   const [selectedSauces, setSelectedSauces] = useState<string[]>([]);
-  const [riceOption, setRiceOption] = useState<'Con arroz' | 'Sin arroz'>('Con arroz');
   const [orderNote, setOrderNote] = useState('');
   const [orderMode, setOrderMode] = useState<OrderMode>('delivery');
   const [deliveryDetails, setDeliveryDetails] = useState<DeliveryDetails>({ nombre: '', telefono: '', direccion: '', referencia: '' });
@@ -83,9 +81,8 @@ export default function App() {
   const checkoutTotal = subtotal + deliveryFee;
 
   const openCustomization = (dish: Dish, categoryId: string) => {
-    setCustomizing({ dish, includeRice: isFoodCategory(categoryId) });
+    setCustomizing({ dish, hasSauces: isFoodCategory(categoryId) });
     setSelectedSauces([]);
-    setRiceOption('Con arroz');
     setOrderNote('');
   };
 
@@ -97,17 +94,16 @@ export default function App() {
 
   const addCustomizedDish = () => {
     if (!customizing) return;
-    const { dish, includeRice } = customizing;
-    const sauces = includeRice ? selectedSauces : [];
-    const rice = includeRice ? riceOption : undefined;
+    const { dish, hasSauces } = customizing;
+    const sauces = hasSauces ? selectedSauces : [];
     const note = orderNote.trim();
-    const id = [dish.nombre, dish.precio, rice || '', sauces.join(','), note].join('|');
+    const id = [dish.nombre, dish.precio, sauces.join(','), note].join('|');
 
     setCart((current) => {
       const found = current.find((cartDish) => cartDish.id === id);
       return found
         ? current.map((cartDish) => cartDish.id === id ? { ...cartDish, cantidad: cartDish.cantidad + 1 } : cartDish)
-        : [...current, { id, nombre: dish.nombre, precio: dish.precio, cantidad: 1, cremas: sauces, arroz: rice, nota: note }];
+        : [...current, { id, nombre: dish.nombre, precio: dish.precio, cantidad: 1, cremas: sauces, nota: note }];
     });
     setCustomizing(null);
   };
@@ -125,7 +121,6 @@ export default function App() {
   };
 
   const preferences = (dish: CartItem) => [
-    dish.arroz,
     dish.cremas.length ? `Cremas: ${dish.cremas.join(', ')}` : undefined,
     dish.nota ? `Nota: ${dish.nota}` : undefined,
   ].filter(Boolean) as string[];
@@ -168,7 +163,7 @@ export default function App() {
       ].join('\n');
     const priceSummary = orderMode === 'delivery'
       ? `Subtotal: S/ ${subtotal.toFixed(2)}\nDelivery: S/ 1.00\nTotal: S/ ${checkoutTotal.toFixed(2)}`
-      : `Total: S/ ${checkoutTotal.toFixed(2)}`;
+      : `Subtotal: S/ ${subtotal.toFixed(2)}\nRecojo en tienda: Gratis (S/ 0.00)\nTotal: S/ ${checkoutTotal.toFixed(2)}`;
     const message = `Resumen del pedido:\n${detail}\n\n${fulfillment}\n\n${priceSummary}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   };
@@ -258,7 +253,27 @@ export default function App() {
             <motion.div className="customization-panel" initial={{ y: 35, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 35, opacity: 0 }}>
               <button className="close-button" onClick={() => setCustomizing(null)} aria-label="Cerrar personalización"><X size={20} /></button>
               <p className="panel-eyebrow">PERSONALIZA TU PEDIDO</p><h2>{customizing.dish.nombre}</h2><strong className="customization-price">{customizing.dish.precio}</strong>
-              {customizing.includeRice && <><div className="customization-section"><div><h3>¿Con arroz?</h3><p>Elige una opción para tu plato.</p></div><div className="option-toggle"><button className={riceOption === 'Con arroz' ? 'selected' : ''} onClick={() => setRiceOption('Con arroz')}>Con arroz</button><button className={riceOption === 'Sin arroz' ? 'selected' : ''} onClick={() => setRiceOption('Sin arroz')}>Sin arroz</button></div></div><div className="customization-section"><div><h3>Cremas</h3><p>Puedes elegir todas, algunas o ninguna.</p></div><div className="sauce-options">{SAUCES.map((sauce) => <button key={sauce} className={selectedSauces.includes(sauce) ? 'selected' : ''} aria-pressed={selectedSauces.includes(sauce)} onClick={() => toggleSauce(sauce)}><span>{selectedSauces.includes(sauce) ? '✓' : ''}</span>{sauce}</button>)}</div></div></>}
+              {customizing.hasSauces && (
+                <div className="customization-section">
+                  <div>
+                    <h3>Cremas</h3>
+                    <p>Puedes elegir todas, algunas o ninguna.</p>
+                  </div>
+                  <div className="sauce-options">
+                    {SAUCES.map((sauce) => (
+                      <button
+                        key={sauce}
+                        className={selectedSauces.includes(sauce) ? 'selected' : ''}
+                        aria-pressed={selectedSauces.includes(sauce)}
+                        onClick={() => toggleSauce(sauce)}
+                      >
+                        <span>{selectedSauces.includes(sauce) ? '✓' : ''}</span>
+                        {sauce}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="customization-section note-section"><label htmlFor="order-note"><h3>Nota para tu pedido</h3><p>Opcional: indica cualquier detalle que debamos considerar.</p></label><textarea id="order-note" value={orderNote} onChange={(event) => setOrderNote(event.target.value)} placeholder="Ej.: sin cebolla, bien dorado..." maxLength={180} /></div>
               <button className="add-customized-dish" onClick={addCustomizedDish}>Agregar al pedido <Plus size={19} /></button>
             </motion.div>
@@ -298,7 +313,15 @@ export default function App() {
                   <label>Nombre<input required value={pickupDetails.nombre} onChange={(event) => setPickupDetails({ ...pickupDetails, nombre: event.target.value })} placeholder="Tu nombre completo" /></label>
                   <label>Teléfono<input required type="tel" inputMode="tel" value={pickupDetails.telefono} onChange={(event) => setPickupDetails({ ...pickupDetails, telefono: event.target.value })} placeholder="Ej. 999 999 999" /></label>
                 </>}
-                <div className="checkout-summary"><div><span>Subtotal productos</span><b>S/ {subtotal.toFixed(2)}</b></div>{orderMode === 'delivery' && <div><span>Delivery</span><b>S/ 1.00</b></div>}<div className="checkout-total"><span>Total</span><strong>S/ {checkoutTotal.toFixed(2)}</strong></div></div>
+                <div className="checkout-summary">
+                  <div><span>Subtotal productos</span><b>S/ {subtotal.toFixed(2)}</b></div>
+                  {orderMode === 'delivery' ? (
+                    <div><span>Delivery</span><b>S/ 1.00</b></div>
+                  ) : (
+                    <div><span>Recojo en tienda</span><b>S/ 0.00 (Gratis)</b></div>
+                  )}
+                  <div className="checkout-total"><span>Total</span><strong>S/ {checkoutTotal.toFixed(2)}</strong></div>
+                </div>
                 <button className="whatsapp-button checkout-submit" type="submit"><MessageCircle size={20} /> Enviar pedido por WhatsApp</button>
               </form>
             </motion.div>
