@@ -42,7 +42,10 @@ interface PickupDetails {
 
 type OrderMode = 'delivery' | 'pickup';
 
-const isFoodCategory = (categoryId: string) => !['bebidas', 'frappes'].includes(categoryId);
+const isFoodCategory = (categoryId: string) => {
+  const id = categoryId.toLowerCase();
+  return !['bebidas', 'frappes', 'gaseosas-y-cervezas', 'bebidas-heladas'].some((nonFood) => id.includes(nonFood));
+};
 
 export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);

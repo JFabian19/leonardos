@@ -1,11 +1,17 @@
 nombre,orden,visible
 Pollos a la brasa,1,TRUE
-Promo Pepsi,2,TRUE
-Combos a la brasa,3,TRUE
-Platos a la carta,4,TRUE
-Chifa,5,TRUE
-Comida amazónica,6,TRUE
-Parrillas,7,TRUE
-Sopas,8,TRUE
-Bebidas,9,TRUE
-Frappe,10,TRUE
+Promociones,2,TRUE
+Promo Pepsi,3,TRUE
+Salchibrasa,4,TRUE
+Brasa a lo pobre,5,TRUE
+Platos a la carta,6,TRUE
+Chifa - Chaufa,7,TRUE
+Chifa - Aeropuerto,8,TRUE
+Chifa - Tallarín,9,TRUE
+Chifa - Salvaje,10,TRUE
+Chifa - Combinado,11,TRUE
+Sopas,12,TRUE
+Comida amazónica,13,TRUE
+Gaseosas y cervezas,14,TRUE
+Bebidas heladas,15,TRUE
+Frappés,16,TRUE
