@@ -45,12 +45,12 @@ export const DEFAULT_MENU_DATA: Category[] = [
     id: 'combos-a-la-brasa', nombre: 'Combos a la brasa',
     items: [
       item('Salchibrasa 1/4', 'S/ 19.00', '1/4 pollo + papas fritas + ensalada + hot dog', '/salchibrasa-cuarto.webp'),
-      item('Salchibrasa mostro', 'S/ 20.00', 'Mostro + chaufa + papas fritas + ensalada + hot dog', '/salchibrasa-mostro.webp'),
-      item('Salchibrasa mostrito', 'S/ 16.00', 'Mostrito + chaufa + papas fritas + ensalada + hot dog', '/salchibrasa-mostrito.webp'),
+      item('Salchibrasa mostro', 'S/ 20.00', '1/4 pollo + chaufa + papas fritas + ensalada + hot dog', '/salchibrasa-mostro.webp'),
+      item('Salchibrasa mostrito', 'S/ 16.00', '1/8 pollo + chaufa + papas fritas + ensalada + hot dog', '/salchibrasa-mostrito.webp'),
       item('Salchibrasa 1/8', 'S/ 14.00', '1/8 pollo + papas fritas + ensalada + hot dog', '/salchibrasa-octavo.webp'),
       item('Brasa a lo pobre 1/4', 'S/ 21.00', '1/4 pollo + papas fritas + ensalada + plátano frito + huevo frito', '/brasa-pobre-cuarto.webp'),
-      item('Brasa a lo pobre mostro', 'S/ 23.00', 'Mostro + chaufa + papas fritas + ensalada + plátano frito + huevo frito', '/brasa-pobre-mostro.webp'),
-      item('Brasa a lo pobre mostrito', 'S/ 18.00', 'Mostrito + chaufa + papas fritas + ensalada + plátano frito + huevo frito', '/brasa-pobre-mostrito.webp'),
+      item('Brasa a lo pobre mostro', 'S/ 23.00', '1/4 pollo + chaufa + papas fritas + ensalada + plátano frito + huevo frito', '/brasa-pobre-mostro.webp'),
+      item('Brasa a lo pobre mostrito', 'S/ 18.00', '1/8 pollo + chaufa + papas fritas + ensalada + plátano frito + huevo frito', '/brasa-pobre-mostrito.webp'),
     ],
   },
   {
