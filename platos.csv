@@ -5,13 +5,13 @@ Pollos a la brasa,1/4 pollo,Papas fritas + ensalada,S/ 15.00,/pollo-brasa-cuarto
 Pollos a la brasa,Mostro 1/4 de pollo,Chaufa + papas fritas + ensalada,S/ 18.00,/pollo-mostro-referencia.webp,,4,TRUE
 Pollos a la brasa,Mostrito 1/8 de pollo,Chaufa + papas fritas + ensalada,S/ 13.00,/pollo-mostrito-octavo.webp,,5,TRUE
 Promo Pepsi,Promo 1/4 pollo,Papas fritas + ensalada + Pepsi 450 ml,S/ 17.00,/combo-cuarto-pepsi.webp,,1,TRUE
-Promo Pepsi,Promo 1/2 pollo,Papas fritas + ensalada + Pepsi Jumbo,S/ 32.00,/menu-grid-01-promos.webp,tl,2,TRUE
-Promo Pepsi,Promo 1 pollo entero,Papas fritas + ensalada + Pepsi 1.5 L,S/ 58.00,/menu-grid-01-promos.webp,tr,3,TRUE
+Promo Pepsi,Promo 1/2 pollo,Papas fritas + ensalada + Pepsi Jumbo,S/ 32.00,/combo-medio-pepsi.webp,,2,TRUE
+Promo Pepsi,Promo 1 pollo entero,Papas fritas + ensalada + Pepsi 1.5 L,S/ 58.00,/combo-entero-pepsi.webp,,3,TRUE
 Promo Pepsi,Mostrito Pepsi,Chaufa + papas fritas + ensalada + Pepsi 355 ml,S/ 14.00,/combo-octavo-mostrito-pepsi.webp,,4,TRUE
 Promo Pepsi,Mostro Pepsi,Chaufa + papas fritas + ensalada + Pepsi 450 ml,S/ 19.00,/combo-cuarto-mostrito-pepsi.webp,,5,TRUE
 Promo Pepsi,Promo familiar,1 pollo + papas fritas + ensalada + Pepsi 1.5 L + 1/4 pollo solo o chaufa,S/ 71.00,/combo-pepsi-familiar.webp,,6,TRUE
-Promo Pepsi,Promo especial 1/2,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 75.00,/menu-grid-01-promos.webp,bl,7,TRUE
-Promo Pepsi,Promo especial 1/2,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 66.00,/menu-grid-01-promos.webp,bl,8,TRUE
+Promo Pepsi,Promo especial 1/2,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 75.00,/promo-especial-medio.webp,,7,TRUE
+Promo Pepsi,Promo especial 1/2,1 pollo entero + 1/2 pollo solo + papas fritas + ensalada,S/ 66.00,/promo-especial-medio.webp,,8,TRUE
 Promo Pepsi,Promo especial con chaufa,1 pollo entero + 1/4 pollo solo + chaufa + papas fritas + ensalada,S/ 73.00,/promo-especial-chaufa.webp,,9,TRUE
 Combos a la brasa,Salchibrasa 1/4,1/4 pollo + papas fritas + ensalada + hot dog,S/ 19.00,/salchibrasa-cuarto.webp,,1,TRUE
 Combos a la brasa,Salchibrasa mostro,Mostro + chaufa + papas fritas + ensalada + hot dog,S/ 20.00,/salchibrasa-mostro.webp,,2,TRUE
