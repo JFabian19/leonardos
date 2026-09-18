@@ -69,6 +69,8 @@ button { font: inherit; cursor: pointer; }
   justify-content: center;
 }
 .phone-action { color: #ffd17a; font-size: 12px; font-weight: 800; gap: 5px; white-space: nowrap; }
+.header-whatsapp-mark { width: 17px; height: 17px; display: grid; place-items: center; overflow: hidden; flex: 0 0 auto; border-radius: 50%; background: #25d366; }
+.header-whatsapp-mark img { width: 27px; height: 27px; max-width: none; object-fit: contain; transform: translate(1px, -1px); }
 .cart-icon, .mobile-menu { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; position: relative; }
 .cart-icon { color: var(--gold); }
 .cart-icon span { position: absolute; top: -5px; right: -4px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 100px; background: var(--ember); color: white; display: grid; place-items: center; font: 800 10px/1 'DM Sans', sans-serif; }
@@ -222,8 +224,14 @@ button { font: inherit; cursor: pointer; }
   .site-shell { padding: 0; }
   .topbar { height: 100px; padding: 7px 12px; }
   .header-logo { width: 142px; height: 86px; border-radius: 11px; }
-  .phone-action span { display: none; }
-  .phone-action { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; }
+  .header-actions { gap: 8px; }
+  .phone-action, .cart-icon, .mobile-menu { width: 42px; height: 42px; border-radius: 50%; }
+  .phone-action { border: 1px solid #5ef08b; background: #1baa50; box-shadow: 0 4px 10px rgba(5, 77, 30, .4); }
+  .phone-action-label { display: none; }
+  .header-whatsapp-mark { width: 22px; height: 22px; background: transparent; }
+  .header-whatsapp-mark img { width: 34px; height: 34px; transform: translate(1px, -1px); }
+  .cart-icon { color: #ffd565; border-color: rgba(255, 205, 92, .72); background: rgba(255, 188, 39, .12); box-shadow: 0 4px 10px rgba(0, 0, 0, .22); }
+  .mobile-menu { color: #fff7e9; border-color: rgba(255, 255, 255, .42); background: rgba(255, 255, 255, .08); box-shadow: 0 4px 10px rgba(0, 0, 0, .22); }
   .mobile-menu { display: grid; }
   .category-nav { top: 100px; }
   .category-nav:not(.is-open) { display: none; }

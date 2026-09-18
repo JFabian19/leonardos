@@ -179,7 +179,7 @@ export default function App() {
         <header className="topbar">
           <a href="#inicio" className="header-logo" aria-label="Inicio de Leonardo's"><img src="/logo-leonardos.png" alt="Pollos a la Brasa Leonardo's & Chifa" /></a>
           <div className="header-actions">
-            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="phone-action" aria-label={`Escribir al WhatsApp ${WHATSAPP_DISPLAY}`}><MessageCircle size={16} /> <span>{WHATSAPP_DISPLAY}</span></a>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="phone-action" aria-label={`Escribir al WhatsApp ${WHATSAPP_DISPLAY}`}><span className="header-whatsapp-mark" aria-hidden="true"><img src="/whatsapp-logo.png" alt="" /></span><span className="phone-action-label">{WHATSAPP_DISPLAY}</span></a>
             <button className="cart-icon" onClick={() => cartCount > 0 && setShowCart(true)} aria-label="Ver pedido"><ShoppingBag size={21} />{cartCount > 0 && <span>{cartCount}</span>}</button>
             <button className="mobile-menu" onClick={() => setShowMenu((visible) => !visible)} aria-label="Ver categorías">{showMenu ? <X size={21} /> : <Menu size={21} />}</button>
           </div>
