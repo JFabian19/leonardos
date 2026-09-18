@@ -32,7 +32,7 @@ export const DEFAULT_MENU_DATA: Category[] = [
     nombre: 'Promociones',
     items: [
       item('Promoción de 1 pollo entero y 1/2 pollo', 'S/ 75.00', '1 pollo entero + 1/2 pollo solo + papas fritas + ensalada', '/promo-especial-medio.webp'),
-      item('Promoción de 1 pollo entero y 1/2 pollo', 'S/ 66.00', '1 pollo entero + 1/2 pollo solo + papas fritas + ensalada', '/promo-especial-medio.webp'),
+      item('Promoción de 1 pollo entero y chaufa', 'S/ 66.00', '1 pollo entero + chaufa + papas fritas + ensalada', 'https://i.postimg.cc/0jGzhM0C/c4c6eed9-f776-4f0e-835a-18721d84fde7.jpg'),
       item('Promoción de 1 pollo entero y 1/4 de pollo', 'S/ 73.00', '1 pollo entero + 1/4 pollo solo + chaufa + papas fritas + ensalada', '/promo-especial-chaufa.webp'),
     ],
   },
@@ -178,7 +178,7 @@ export const DEFAULT_MENU_DATA: Category[] = [
       item('Inca Kola o Coca-Cola de 1 litro', 'S/ 8.00', undefined, '/bebida-inca-1l.webp'),
       item('Gordita', 'S/ 5.00', undefined, '/bebida-gordita.webp'),
       item('Inca Kola o Coca-Cola de 600 ml', 'S/ 4.00', undefined, '/bebida-inca-600.webp'),
-      item('Inca Kola o Coca-Cola en botella de vidrio', 'S/ 4.00', undefined, '/bebida-inca-vidrio.webp'),
+      item('Inca Kola o Coca-Cola en botella de vidrio', 'S/ 3.00', undefined, 'https://peruvianboxofficial.com/cdn/shop/files/IMG-2147_grande.jpg?v=1719416376'),
       item('Pepsi de 1.5 litros', 'S/ 6.00', undefined, '/bebida-pepsi-1-5l.webp'),
       item('Pepsi Jumbo', 'S/ 4.00', undefined, '/bebida-pepsi-jumbo.webp'),
       item('Pepsi de 450 ml', 'S/ 2.50', undefined, '/bebida-pepsi-450.webp'),
