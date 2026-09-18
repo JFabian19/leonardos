@@ -177,7 +177,7 @@ export default function App() {
     <div className="site-shell">
       <div className="menu-page">
         <header className="topbar">
-          <a href="#inicio" className="header-logo" aria-label="Inicio de Leonardo's"><img src="/logo-leonardos.webp" alt="Pollos a la Brasa Leonardo's & Chifa" /></a>
+          <a href="#inicio" className="header-logo" aria-label="Inicio de Leonardo's"><img src="/logo-leonardos.png" alt="Pollos a la Brasa Leonardo's & Chifa" /></a>
           <div className="header-actions">
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="phone-action" aria-label={`Escribir al WhatsApp ${WHATSAPP_DISPLAY}`}><MessageCircle size={16} /> <span>{WHATSAPP_DISPLAY}</span></a>
             <button className="cart-icon" onClick={() => cartCount > 0 && setShowCart(true)} aria-label="Ver pedido"><ShoppingBag size={21} />{cartCount > 0 && <span>{cartCount}</span>}</button>
