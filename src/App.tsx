@@ -195,6 +195,7 @@ export default function App() {
             <p>Pollo jugoso, piel crocante y el aroma inconfundible de nuestras brasas.</p>
             <button className="hero-cta" onClick={() => selectCategory('pollos-a-la-brasa')}>Ver nuestra carta <ChevronRight size={18} /></button>
             <div className="hero-social-links" aria-label="Redes sociales de Leonardo's">
+              <a className="whatsapp-social-link" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><span className="whatsapp-mark"><img src="/whatsapp-logo.png" alt="" /></span>WhatsApp</a>
               <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"><img src="/facebook-logo.webp" alt="" />Facebook</a>
               <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer"><img src="/tiktok-logo.webp" alt="" />TikTok</a>
             </div>
