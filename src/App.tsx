@@ -193,11 +193,22 @@ export default function App() {
             <div className="hero-kicker"><Flame size={16} fill="currentColor" /> Desde la brasa a tu mesa</div>
             <h1>El sabor que<br /><em>enciende</em> el antojo.</h1>
             <p>Pollo jugoso, piel crocante y el aroma inconfundible de nuestras brasas.</p>
-            <button className="hero-cta" onClick={() => selectCategory('pollos-a-la-brasa')}>Ver nuestra carta <ChevronRight size={18} /></button>
-            <div className="hero-social-links" aria-label="Redes sociales de Leonardo's">
-              <a className="whatsapp-social-link" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><span className="whatsapp-mark"><img src="/whatsapp-logo.png" alt="" /></span>WhatsApp</a>
-              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"><img src="/facebook-logo.webp" alt="" />Facebook</a>
-              <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer"><img src="/tiktok-logo.webp" alt="" />TikTok</a>
+            <div className="hero-actions">
+              <button className="hero-cta" onClick={() => selectCategory('pollos-a-la-brasa')}>Ver nuestra carta <ChevronRight size={18} /></button>
+              <div className="hero-social-links" aria-label="Redes sociales y contacto de Leonardo's">
+                <a className="hero-social-btn whatsapp-social-link" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" aria-label={`Escribir al WhatsApp ${WHATSAPP_DISPLAY}`}>
+                  <span className="social-icon whatsapp-mark"><img src="/whatsapp-logo.png" alt="" /></span>
+                  <span className="social-label">WhatsApp</span>
+                </a>
+                <a className="hero-social-btn facebook-social-link" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Seguir en Facebook" title="Facebook">
+                  <span className="social-icon"><img src="/facebook-logo.webp" alt="" /></span>
+                  <span className="social-label">Facebook</span>
+                </a>
+                <a className="hero-social-btn tiktok-social-link" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Seguir en TikTok" title="TikTok">
+                  <span className="social-icon"><img src="/tiktok-logo.webp" alt="" /></span>
+                  <span className="social-label">TikTok</span>
+                </a>
+              </div>
             </div>
           </div>
           <div className="hero-stamp"><span>HECHO</span><strong>AL FUEGO</strong><span>CON SABOR</span></div>
@@ -228,8 +239,11 @@ export default function App() {
 
         <footer className="site-footer">
           <img src="/logo-leonardos.webp" alt="Leonardo's" /><p>Pollo a la brasa · Chifa · Parrillas</p>
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={16} /> WhatsApp: {WHATSAPP_DISPLAY}</a>
-          <div className="social-links"><a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"><Facebook size={17} /> Síguenos en Facebook</a><a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer"><Music2 size={17} /> Síguenos en TikTok</a></div>
+          <a className="footer-whatsapp" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><span className="footer-whatsapp-mark"><img src="/whatsapp-logo.png" alt="" /></span> WhatsApp: {WHATSAPP_DISPLAY}</a>
+          <div className="social-links">
+            <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"><img src="/facebook-logo.webp" alt="" style={{ width: 17, height: 17, objectFit: 'contain', borderRadius: 3 }} /> Síguenos en Facebook</a>
+            <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer"><img src="/tiktok-logo.webp" alt="" style={{ width: 17, height: 17, objectFit: 'contain', borderRadius: 3 }} /> Síguenos en TikTok</a>
+          </div>
           <span>© 2026 Leonardo's. Todos los derechos reservados.</span>
         </footer>
       </div>
